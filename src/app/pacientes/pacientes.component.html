@@ -1,0 +1,88 @@
+<div class="container">
+  <!-- CAMPO DE PESQUISA -->
+  <div id="pesquisa">
+    <table width="900px;">
+      <td>
+        <label for="paciente">N° Matricula &nbsp; </label>
+        <input type="number" id="paciente" [(ngModel)]="numberId" min=1 />
+        <button id="botaoMatricula" (click)="buscaPorCodigoMatricula()">Pesquisar</button>
+      </td>
+      <td width="50%">
+        <label for="nomePaciente">Nome do paciente &nbsp; </label>
+        <input type="text" id="nomePaciente" [(ngModel)]="nome" />
+        <button id="botaoPaciente" (click)="buscaPacientePorNome()">Pesquisar</button>
+      </td>
+    </table>
+  </div>
+
+
+
+  <!-- CAMPO QUE EXIBI INFORMAÇÕES DO CLIENTE -->
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+
+
+
+          <th scope="col">Nome do Paciente</th>
+          <th scope="col">Matrícula do Paciente</th>
+          <th scope="col">Informações do Paciente</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="mostraTabela2==false && mostraTabela==true">
+        <tr id="tr" *ngFor="let item of pessoa">
+          <td>{{item.nome}}</td>
+          <td>{{item.id}}</td>
+          <td><button id="botaoInformacoes" (click)="exibirInformacoes()">...</button></td>
+          <td>
+              <div id="crudLista" *ngIf="exibirInformacoesCrud==true">
+                <ul id="InformacoesUl">
+                  <li><button>Editar paciente</button> </li>
+                  <li><button>Deletar paciente</button></li>
+                  <li><button>dados do paciente</button></li>
+                </ul>
+  
+              </div>
+            </td>
+        </tr>
+      </tbody>
+
+
+      <tbody *ngIf="mostraTabela==false && mostraTabela2==true">
+        <tr>
+          <td>{{mostraTabelaNome}}</td>
+          <td>{{mostraTabelaId}}</td>
+          <td><button id="botaoInformacoes" (click)="exibirInformacoes()">...</button></td>
+          <td>
+              <div id="crudLista" *ngIf="exibirInformacoesCrud==true">
+                <ul id="InformacoesUl">
+                  <li><button  id="editar">Editar paciente</button> </li>
+                  <li><button id="deletar" (click)="deletarPaciente()">Deletar paciente</button></li>
+                  <li><button id="informacoes">dados do paciente</button></li>
+                </ul>
+  
+              </div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- CAMPO DE PAGINAÇÃO -->
+
+  <div>
+    <ul id="paginacao">
+      <li *ngFor="let number of pages"><button (click)="paginaSelecionada()" id="botaoPagina">{{number+1}}</button></li>
+    </ul>
+    <span>De <span id="paginaAtual">1</span> a {{totalPaginas}}</span><br>
+  </div>
+
+
+</div>
+
+<div class="footer">
+  <p>Dra. Katia Amadei CRN: 3072</p>
+</div>

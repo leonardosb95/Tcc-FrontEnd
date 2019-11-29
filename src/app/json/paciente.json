@@ -1,0 +1,45 @@
+{
+  "array": [
+    {
+      "nome": "amanda",
+      "idade": "21",
+      "dtNasc": "08/06/1998",
+      "sexo": "F"
+    },
+    {
+      "nome": "caique",
+      "idade": "23",
+      "dtNasc": "08/06/1998",
+      "sexo": "M"
+    },
+    {
+      "nome": "leonardo",
+      "idade": "24",
+      "dtNasc": "08/06/1995",
+      "sexo": "M"
+    },
+    {
+      "nome": "marcos",
+      "idade": "22",
+      "dtNasc": "08/06/1998",
+      "sexo": "M"
+    },
+    {
+      "nome": "felix",
+      "idade": "22",
+      "dtNasc": "08/06/1998",
+      "sexo": "M"
+    },
+    {
+      "nome": "felipe",
+      "idade": "21",
+      "dtNasc": "08/06/1998",
+      "sexo": "M"
+    },
+    {
+      "id": 1,
+      "nome": "amadei",
+      "idade": "30"
+    }
+  ]
+}

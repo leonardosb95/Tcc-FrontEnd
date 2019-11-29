@@ -1,0 +1,76 @@
+.componente{
+    height: 200px;
+    width: 300px;
+    border: 1px solid;
+    border-color: teal;
+    border-radius: 5px;
+    position: relative;
+}
+#pesquisa{
+    margin-bottom: 50px;;
+}
+.c1{
+    left: 330px;
+    bottom: 200px;
+}
+
+.c2{
+    left: 659px;
+    bottom: 401px;
+}
+
+.c3{
+    left: 988px;
+    bottom: 601px;
+}
+
+  .r {
+    margin-right: -20px;
+    margin-left: -69px;
+  }
+ #paginacao{
+     position:relative;
+     left:-40px;
+ } 
+#paginacao li{
+    display: inline-block;
+    margin-left:10px;
+    width:30px !important;    
+}
+#paginacao li:hover{
+    cursor: pointer;
+    color:blue;
+}
+#botaoInformacoes{
+    background-color:darkgreen;
+    color:white;
+} 
+#crudLista{
+    position:absolute;
+    right:70px;
+    color:black;
+    padding:5px;
+    width: 450px;
+    background-color: aliceblue;
+}
+#crudLista ul{
+    margin-left:-30px;
+}
+#crudLista ul li{
+    list-style:none;
+    margin-left: 10px;
+    display: inline;
+    color:white;
+}
+#crudLista ul li:hover{
+    cursor: pointer;
+}
+#crudLista ul li:nth-child(1) button{
+    background-color: orange;
+}
+#crudLista ul li:nth-child(2) button{
+    background-color: red;
+}
+#crudLista ul li:nth-child(3) button{
+    background-color:palegreen;
+}

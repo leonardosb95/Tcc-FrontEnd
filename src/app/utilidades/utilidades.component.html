@@ -1,0 +1,37 @@
+<div class="container">
+  
+<div class="matricula">
+    <input type="number" [(ngModel)]="matricula" min="1" required/>
+    <label for="" placeholder="Matricula" alt="Matricula"></label>
+</div>
+
+  <div class="peso">
+    <input type="text" [(ngModel)]="peso" required/>
+    <label for="" placeholder="Peso" alt="Peso"></label>
+  </div>
+
+  <div class="divisao">
+    /
+  </div>
+
+  <div class="altura">
+    <input type="text"[(ngModel)]="altura" id="altura"  required/>
+    <label for="" placeholder="Altura ²" alt="Altura ²"></label>
+  </div>
+
+  <div class="igual">
+    <button id="botao" class="igual1" (click)="calcula()">=</button>
+  </div>
+
+  <div class="resultado">
+    <h2>
+      {{imc}}
+    </h2>
+
+    <h2 [ngClass]="{azulClaro: pesoNormal === 'Abaixo do Peso', azul: pesoNormal === 'Peso Normal', roxo: pesoNormal === 'Excesso de Peso', amarelo: pesoNormal === 'Obesidade', rosa: pesoNormal === 'Obesidade Mórbida'}">{{pesoNormal}}</h2>
+  </div>
+
+  <img src="/imagens/TabelaCalculoIMC.jpg" alt="IMC" width="80%">
+
+</div>
+

@@ -1,0 +1,28 @@
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Nome do Paciente</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Data de Nacsimento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of pacienteArray" >
+        <td (click)="pacientes()">{{item.nome}}</td>
+        <td>{{item.idade}}</td>
+        <td>{{item.sexo}}</td>
+        <td>{{item.dtNasc}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+<div class="footer">
+  <p>Dra. Katia Amadei CRN: 3072</p>
+</div>

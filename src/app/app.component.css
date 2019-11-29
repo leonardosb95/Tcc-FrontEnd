@@ -1,0 +1,67 @@
+.nav{
+    background-color: lightblue;
+    height: 48px !important;
+    font-size: 21px;
+    font-family: initial;
+  }
+
+  .btn{
+    font-family: initial;
+    margin-left: 24px;
+  }
+
+  .btn1{
+    font-family: initial;
+    margin-left: 2px;
+    background-color: #ADD8E6;
+    border: 0px;
+  }
+
+
+
+  .espacamento{
+    margin-top: 14px;
+    /* margin-bottom: 2px; */
+  }
+
+  .espacamento1{
+    margin-top: 6px;
+  }
+
+  .bordaEsq{
+    margin-left: 20px;
+  }
+
+
+  .frase{
+    font-family: fantasy;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ADD8E6;
+    color: black;
+    text-align: left;
+    height: 20px;
+  }
+
+  .bg-dark {
+    background-color: #ADD8E6!important;
+  }
+
+  .margin{
+  margin: 3px;
+  }
+
+  .componente{
+    height: 200px;
+    width: 300px;
+    border: 1px solid;
+    border-color: teal;
+    border-radius: 5px;
+  }
+
+

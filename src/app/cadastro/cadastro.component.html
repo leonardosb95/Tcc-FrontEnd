@@ -1,0 +1,294 @@
+<button type="button" class="btn" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+  aria-controls="collapseBasic">Dados do Paciente
+</button>
+<hr>
+<div id="collapseBasic" [collapse]="!isCollapsed" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="nome" type="text" required>
+      <label for="" placeholder="Nome Completo" alt="Nome Completo"></label>
+
+      <input [(ngModel)]="idade" type="text" required>
+      <label for="" placeholder="Idade" alt="Idade"></label>
+
+      <input [(ngModel)]="sexo" type="text" required>
+      <label for="" placeholder="Sexo" alt="Sexo"></label>
+
+      <input [(ngModel)]="dtNasc" type="text" required>
+      <label for="" placeholder="Data de Nascimento" alt="Data de Nascimento"></label>
+
+
+
+
+
+      <button (click)="pessoa()" class="btn1">Confirmar dados</button>
+
+    </div>
+</div>
+
+<button type="button" class="btn" (click)="isCollapsed8 = !isCollapsed8"
+  [attr.aria-expanded]="!isCollapsed8" aria-controls="collapseBasic8">Endereço
+</button>
+<hr>
+<div id="collapseBasic8" [collapse]="!isCollapsed8" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+    <input [(ngModel)]="endereco" type="text" required>
+    <label for="" placeholder="Endereço" alt="Endereço"></label>
+
+    <input [(ngModel)]="bairro" type="text" required>
+    <label for="" placeholder="Bairro" alt="Bairro"></label>
+
+    <input [(ngModel)]="cidade" type="text" required>
+    <label for="" placeholder="Cidade" alt="Cidade"></label>
+
+    <input [(ngModel)]="estado" type="text" required>
+    <label for="" placeholder="Estado" alt="Estado"></label>
+
+    <input [(ngModel)]="email" type="text" required>
+    <label for="" placeholder="E-mail" alt="E-mail"></label>
+
+    <input [(ngModel)]="telCelular" type="text" required>
+    <label for="" placeholder="Telefone Celular" alt="Telefone Celular"></label>
+
+    <input [(ngModel)]="telResidencial" type="text" required>
+    <label for="" placeholder="Telefone Residencial" alt="Telefone Residencial"></label>
+
+    <input [(ngModel)]="motivoConsulta" type="text" required>
+    <label for="" placeholder="Motivo da Consulta" alt="Motivo da Consulta"></label>
+
+    <textarea [(ngModel)]="obs" required></textarea>
+    <label for="" placeholder="Observações" alt="Observações"></label>
+
+    <button (click)="end()" class="btn1">Corfirmar dados</button>
+
+  </div>
+</div>
+
+
+<button type="button" class="btn" (click)="isCollapsed1 = !isCollapsed1"
+  [attr.aria-expanded]="!isCollapsed1" aria-controls="collapseBasic1">Social
+</button>
+<hr>
+<div id="collapseBasic1" [collapse]="!isCollapsed1" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="profissao" type="text" required>
+      <label for="" placeholder="Profissão" alt="Profissão"></label>
+      <input [(ngModel)]="cargaHoraria" type="text" required>
+      <label for="" placeholder="Carga Horária" alt="Carga Horária"></label>
+      <input [(ngModel)]="compFamiliar" type="text" required>
+      <label for="" placeholder="Composição Familiar" alt="Composição Familiar"></label>
+      <input [(ngModel)]="compraAlimentos" type="text" required>
+      <label for="" placeholder="Quem compra os alimentos" alt="Quem compra os alimentos"></label>
+      <button (click)="social()" class="btn1">Corfirmar dados</button>
+  </div>
+</div>
+
+<button type="button" class="btn" (click)="isCollapsed2 = !isCollapsed2"
+  [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseBasic2">Dados Antropométricos
+</button>
+<hr>
+<div id="collapseBasic2" [collapse]="!isCollapsed2" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="pa" type="text" required>
+      <label for="" placeholder="Pressão Arterial" alt="PA"></label>
+      <input [(ngModel)]="altura" type="text" required>
+      <label for="" placeholder="Altura" alt="Altura (cm)"></label>
+      <input [(ngModel)]="imc" type="text" required>
+      <label for="" placeholder="Indice de Massa Corpórea" alt="IMC"></label>
+      <input [(ngModel)]="pct" type="text" required>
+      <label for="" placeholder="Prega Cutânea Tricipital" alt="PCT"></label>
+      <input [(ngModel)]="pcb" type="text" required>
+      <label for="" placeholder="Prega Cutânea Bicipital" alt="PCB"></label>
+      <input [(ngModel)]="pcse" type="text" required>
+      <label for="" placeholder="Prega Cutânea Subescapular" alt="PCSE"></label>
+      <input [(ngModel)]="pcPeitoral" type="text" required>
+      <label for="" placeholder="Prega Cutânea Peitoral" alt="PCPeitoral"></label>
+      <input [(ngModel)]="pcAb" type="text" required>
+      <label for="" placeholder="Prega Cutânea Abdominal" alt="PCAb"></label>
+      <input [(ngModel)]="pcsi" type="text" required>
+      <label for="" placeholder="Prega Cutânea Supra Ilíaca" alt="PCSI"></label>
+      <input [(ngModel)]="pcCoxa" type="text" required>
+      <label for="" placeholder="Prega Cutânea Coxa" alt="PCCoxa"></label>
+      <input [(ngModel)]="pcPant" type="text" required>
+      <label for="" placeholder="Prega Cutânea Panturrilha" alt="PCPant"></label>
+      <input [(ngModel)]="cBraco" type="text" required>
+      <label for="" placeholder="Circunferência Braço" alt="CBraço"></label>
+      <input [(ngModel)]="cAntebraco" type="text" required>
+      <label for="" placeholder="Circunferência Antebraço" alt="CAntebraço"></label>
+      <input [(ngModel)]="cPunho" type="text" required>
+      <label for="" placeholder="Circunferência Punho" alt="CPunho"></label>
+      <input [(ngModel)]="cTorax" type="text" required>
+      <label for="" placeholder="Circunferência Tórax" alt="CTorax"></label>
+      <input [(ngModel)]="cCintura" type="text" required>
+      <label for="" placeholder="Circunferência Cintura" alt="CCintura"></label>
+      <input [(ngModel)]="cAbdominal" type="text" required>
+      <label for="" placeholder="Circunferência Abdominal" alt="CAbdominal"></label>
+      <input [(ngModel)]="cQuadril" type="text" required>
+      <label for="" placeholder="CAbdominal Quadril" alt="CQuadril"></label>
+      <input [(ngModel)]="cCoxa" type="text" required>
+      <label for="" placeholder="Circunferência Coxa" alt="CCoxa"></label>
+      <input [(ngModel)]="cPanturrilha" type="text" required>
+      <label for="" placeholder="Circunferência Panturrilha" alt="CPant"></label>
+      <input [(ngModel)]="compleicao" type="text" required>
+      <label for="" placeholder="Compleição" alt="Compleição"></label>
+      <input [(ngModel)]="percentGordura" type="text" required>
+      <label for="" placeholder="Percentual de Gordura" alt="% Gordura"></label>
+      <input [(ngModel)]="percentMusc" type="text" required>
+      <label for="Percentual Massa Muscular" placeholder="% Massa Muscular" alt=""></label>
+      <input [(ngModel)]="pesoAtual" type="text" required>
+      <label for="" placeholder="Peso Atual" alt="Peso Atual"></label>
+      <input [(ngModel)]="pesoIdeal" type="text" required>
+      <label for="" placeholder="Peso Ideal" alt="Peso Ideal"></label>
+      <button (click)="antropometricos()" class="btn1">Corfirmar dados</button>
+  </div>
+</div>
+
+
+<button type="button" class="btn" (click)="isCollapsed3 = !isCollapsed3"
+  [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseBasic3">Dados Clínicos
+</button>
+<hr>
+<div id="collapseBasic3" [collapse]="!isCollapsed3" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="obsVomito" type="text" required>
+      <label for="" placeholder="Vômito" alt="Vômito"></label>
+      <input [(ngModel)]="obsNausea" type="text" required>
+      <label for="" placeholder="Náusea" alt="Náusea"></label>
+      <input [(ngModel)]="obsMastigacao" type="text" required>
+      <label for="" placeholder="Mastigação" alt="Mastigação"></label>
+      <input [(ngModel)]="obsDegluticao" type="text" required>
+      <label for="" placeholder="Deglutição" alt="Deglutição"></label>
+      <input [(ngModel)]="obsDigestao" type="text" required>
+      <label for="" placeholder="Digestão" alt="Digestão"></label>
+      <input [(ngModel)]="obsPirose" type="text" required>
+      <label for="" placeholder="Pirose" alt="Pirose"></label>
+      <input [(ngModel)]="obsRefluxo" type="text" required>
+      <label for="" placeholder="Refluxo" alt="Refluxo"></label>
+      <input [(ngModel)]="obsDiarreia" type="text" required>
+      <label for="" placeholder="Diarréia" alt="Diarréia"></label>
+      <input [(ngModel)]="obsObstipacao" type="text" required>
+      <label for="" placeholder="Obstipação" alt="Obstipação"></label>
+      <input [(ngModel)]="obsInsonia" type="text" required>
+      <label for="" placeholder="Insônia" alt="Insônia"></label>
+      <input [(ngModel)]="obsEstresse" type="text" required>
+      <label for="" placeholder="Estresse" alt="Estresse"></label>
+      <input [(ngModel)]="obsCansaco" type="text" required>
+      <label for="" placeholder="Cansaço" alt="Cansaço"></label>
+      <input [(ngModel)]="obsAnsiedade" type="text" required>
+      <label for="" placeholder="Ansiedade" alt="Ansiedade"></label>
+      <input [(ngModel)]="cirurgia" type="text" required>
+      <label for="" placeholder="Já fez cirurgia? Qual? Quando?" alt="Já fez cirurgia? Qual? Quando?"></label>
+      <input [(ngModel)]="patologia" type="text" required>
+      <label for="" placeholder="Possui alguma patologia? Qual? Desde quando?"
+        alt="Possui alguma patologia? Qual? Desde quando?"></label>
+        <button (click)="dadosClinicos()" class="btn1">Corfirmar dados</button>
+
+  </div>
+</div>
+
+
+<button type="button" class="btn" (click)="isCollapsed4 = !isCollapsed4"
+  [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseBasic4">Atividade Física
+</button>
+<hr>
+<div id="collapseBasic4" [collapse]="!isCollapsed4" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="atvFisica" type="text" required>
+      <label for="" placeholder="Tipo de Atividade Física:" alt="Tipo de Atividade Física:"></label>
+      <input [(ngModel)]="frequencia" type="text" required>
+      <label for="" placeholder="Frequência" alt="Frequência"></label>
+      <input [(ngModel)]="duracao" type="text" required>
+      <label for="" placeholder="Duração" alt="Duração"></label>
+      <input [(ngModel)]="preTreino" type="text" required>
+      <label for="" placeholder="Alimentação Pré-Treino" alt="Alimentação Pré-Treino"></label>
+      <input [(ngModel)]="horario" type="text" required>
+      <label for="" placeholder="Horário Preferido" alt="Horário Preferido"></label>
+      <button (click)="atividadeFisica()" class="btn1">Corfirmar dados</button>
+
+  </div>
+</div>
+
+<button type="button" class="btn" (click)="isCollapsed5 = !isCollapsed5"
+  [attr.aria-expanded]="!isCollapsed5" aria-controls="collapseBasic5">Histórico Alimentar Nutricional
+</button>
+<hr>
+<div id="collapseBasic5" [collapse]="!isCollapsed5" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="intolerancia" type="text" required>
+      <label for="" placeholder="Intolerâcia alimentar" alt="Intolerâcia alimentar"></label>
+      <input [(ngModel)]="preferencia" type="text" required>
+      <label for="" placeholder="Preferência alimentar" alt="Preferência alimentar"></label>
+      <input [(ngModel)]="alteracoesApetite" type="text" required>
+      <label for="" placeholder="Alterações de apetite" alt="Alterações de apetite"></label>
+      <input [(ngModel)]="dieta" type="text" required>
+      <label for="" placeholder="Segue alguma dieta" alt="Segue alguma dieta"></label>
+      <input [(ngModel)]="refeicoesDia" type="text" required>
+      <label for="" placeholder="Quantas refeições por dia" alt="Quantas refeições por dia"></label>
+      <input [(ngModel)]="agua" type="text" required>
+      <label for="" placeholder="Consumo de água" alt="Consumo de água"></label>
+      <input [(ngModel)]="suplementos" type="text" required>
+      <label for="" placeholder="Faz uso de suplementos" alt="Faz uso de suplementos"></label>
+      <input [(ngModel)]="indicacao" type="text" required>
+      <label for="" placeholder="Quem indicou os suplementos" alt="Quem indicou os suplementos"></label>
+      <button (click)="historicoAlimentar()" class="btn1">Corfirmar dados</button>
+
+  </div>
+</div>
+
+
+<button type="button" class="btn" (click)="isCollapsed6 = !isCollapsed6"
+  [attr.aria-expanded]="!isCollapsed6" aria-controls="collapseBasic6">Exames Bioquímicos
+</button>
+<hr>
+<div id="collapseBasic6" [collapse]="!isCollapsed6" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="gli" type="text" required>
+      <label for="" placeholder="Glicemia" alt="GLI"></label>
+      <input [(ngModel)]="hg" type="text" required>
+      <label for="" placeholder="Hemograma" alt="HG"></label>
+      <input [(ngModel)]="tg" type="text" required>
+      <label for="" placeholder="Tireoglobulina" alt="TG"></label>
+      <input [(ngModel)]="ct" type="text" required>
+      <label for="" placeholder="Tomografica Computadorizada" alt="CT"></label>
+      <input [(ngModel)]="ldl" type="text" required>
+      <label for="" placeholder="LDL" alt="LDL"></label>
+      <input [(ngModel)]="hdl" type="text" required>
+      <label for="" placeholder="HDL" alt="HDL"></label>
+      <input [(ngModel)]="medicamentos" type="text" required>
+      <label for="" placeholder="Faz uso de medicamentos" alt="Faz uso de medicamentos"></label>
+      <button (click)="exameBioquimico()" class="btn1">Corfirmar dados</button>
+
+  </div>
+</div>
+
+<button type="button" class="btn" (click)="isCollapsed7 = !isCollapsed7"
+  [attr.aria-expanded]="!isCollapsed7" aria-controls="collapseBasic7">Recordatário Alimentar
+</button>
+<hr>
+<div id="collapseBasic7" [collapse]="!isCollapsed7" [isAnimated]="true">
+  <div class="well well-lg card card-block card-header">
+
+      <input [(ngModel)]="desjejum" type="text" required>
+      <label for="" placeholder="Desjejum" alt="Desjejum"></label>
+      <input [(ngModel)]="colacao" type="text" required>
+      <label for="" placeholder="Colação" alt="Colação"></label>
+      <input [(ngModel)]="almoco" type="text" required>
+      <label for="" placeholder="Almoço" alt="Almoço"></label>
+      <input [(ngModel)]="lanche" type="text" required>
+      <label for="" placeholder="Lanche" alt="Lanche"></label>
+      <input [(ngModel)]="jantar" type="text" required>
+      <label for="" placeholder="Jantar" alt="Jantar"></label>
+      <input [(ngModel)]="ceia" type="text" required>
+      <label for="" placeholder="Ceia" alt="Ceia"></label>
+      <input [(ngModel)]="foraHora" type="text" required>
+      <label for="" placeholder="Fora de hora" alt="Fora de hora"></label>
+      <button (click)="recordatario()" class="btn1">Corfirmar dados</button>
+  </div>
+</div>

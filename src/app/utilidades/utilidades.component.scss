@@ -1,0 +1,361 @@
+input,
+textarea {
+  font-family: inherit;
+
+  font-size: 100%;
+
+  margin: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+label {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  overflow: auto;
+
+  vertical-align: top;
+}
+
+$ap-default: (
+  height: 3em,
+  margin: 1em,
+  border: 1px,
+  border-radius: 1.5em,
+  font-size: 1em,
+  border-color: lightblue,
+  label-color: teal,
+  active-color: #dd4c09,
+  valid-color: #8ed4a1,
+  placeholder-background-color: white,
+  textarea: false
+);
+
+$adaptive-placeholder: ();
+
+@mixin adaptive-placeholder($map: $adaptive-placeholder) {
+  @if $map == $adaptive-placeholder {
+    $ap-default: map-merge($ap-default, $map) !global;
+    $map: $ap-default;
+  }
+
+  $map: map-merge($ap-default, $map);
+
+  $height: map-get($map, height);
+  $margin: map-get($map, margin);
+  $border: map-get($map, border);
+  $radius: map-get($map, border-radius);
+  $font-size: map-get($map, font-size);
+  $border-color: map-get($map, border-color);
+  $label-color: map-get($map, label-color);
+  $active-color: map-get($map, active-color);
+  $valid-color: map-get($map, valid-color);
+  $placeholder-background: map-get($map, placeholder-background-color);
+  $isTextarea: map-get($map, textarea);
+  $borders: $border * 2;
+
+  @if $height < 2 * $margin {
+    @warn "height needs to be at least 2x margin";
+  }
+
+  @if $height < $font-size {
+    @warn "height needs to be at least >= font-size";
+  }
+
+  background-color: $placeholder-background;
+  height: calc(#{$height} + #{$borders});
+  padding: $margin;
+  font-size: $font-size;
+  border: $border solid $border-color;
+  border-radius: $radius;
+
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+  outline: none;
+  &:hover {
+    border: $border solid $border-color;
+  }
+  &:focus,
+  &:active {
+    border: $border solid $active-color;
+    & + label:before {
+      color: $active-color;
+    }
+  }
+
+  & + label {
+    display: block;
+    font-size: $font-size;
+
+    @if $isTextarea {
+      height: calc(#{$height} + #{$borders});
+      line-height: 1;
+      padding-top: calc(#{$margin} + #{$border});
+    } @else {
+      height: $height;
+      line-height: $height;
+    }
+
+    @if $isTextarea {
+      margin-top: calc(-#{$height} - #{$borders});
+    } @else {
+      margin-top: calc(-#{$height} - #{$border});
+    }
+    margin-bottom: 1em;
+    pointer-events: none;
+
+    &:before {
+      content: attr(placeholder);
+      display: inline-block;
+      color: $label-color;
+      margin: 0 calc(#{$margin} + #{$borders});
+      white-space: nowrap;
+
+      -webkit-transition-property: -webkit-transform, color;
+      transition-property: transform, color;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      -webkit-transition-delay: 0;
+      transition-delay: 0;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+
+      -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+      transform-origin: left center;
+    }
+  }
+
+  &:focus,
+  &.active,
+  &:valid {
+    & + label:before {
+      background: $placeholder-background;
+
+      line-height: 1;
+      padding: 0 $border * 1.5;
+      @if $isTextarea {
+        -webkit-transform: translateY(
+            calc((-#{$margin} - 0.5em) - #{$border * 0.5})
+          )
+          scale(0.8, 0.8);
+        -ms-transform: translateY(
+            calc((-#{$margin} - 0.5em) - #{$border * 0.5})
+          )
+          scale(0.8, 0.8);
+        transform: translateY(calc((-#{$margin} - 0.5em) - #{$border * 0.5}))
+          scale(0.8, 0.8);
+      } @else {
+        -webkit-transform: translateY(calc(-#{$height} / 2 - #{$border}/ 2))
+          scale(0.8, 0.8);
+        -ms-transform: translateY(calc(-#{$height} / 2 - #{$border}/ 2))
+          scale(0.8, 0.8);
+        transform: translateY(calc(-#{$height} / 2 - #{$border}/ 2))
+          scale(0.8, 0.8);
+      }
+    }
+  }
+
+  &:valid {
+    border: $border solid $valid-color;
+    & + label:before {
+      content: attr(alt);
+      color: $valid-color;
+    }
+  }
+}
+
+$adaptive-placeholder: (
+  height: 3em,
+  margin: 1em,
+  font-size: 1em
+);
+
+$textarea-placeholder: (
+  height: 18em,
+  border-radius: 16px,
+  textarea: true
+);
+
+input[type="email"],
+input[type="text"],
+input[type="number"] {
+  width: 8em;
+  @include adaptive-placeholder();
+}
+
+textarea {
+  width: 45em;
+  @include adaptive-placeholder($textarea-placeholder);
+}
+
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn-primary.focus,
+.btn-primary:focus {
+  color: #fff;
+  background-color: white;
+  border-color: white;
+}
+
+.btn.focus,
+.btn:focus,
+.btn:hover {
+  background-color: white;
+  color: black;
+  border-color: white;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: black;
+  background-color: white;
+  border-color: white;
+  width: 100px !important;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  background-color: white;
+  color: black;
+  border-color: white;
+  outline-offset: -2px;
+}
+
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: white !important;
+  border: 1px solid white !important;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 0px white;
+}
+
+.btn1 {
+  border-radius: 3px;
+  background-color: teal !important;
+  font-family: initial;
+  margin-left: 2px;
+  color: white;
+  background-color: #add8e6;
+  border: 1px solid;
+  border-color: #add8e6;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.divisao {
+  padding-left: 142px;
+  // top: -54px;
+  position: relative;
+  left:200px;
+  font-size: 28px;
+  height: 30px;
+  z-index: -1;
+}
+
+.altura {
+  position: relative;
+  padding-left: 178px;
+  top: -32px;
+  left:200px;
+}
+.matricula{
+  position: relative;
+  padding-left: 178px;
+  top: 55px;
+  left:-100px;
+}
+
+.igual {
+  position: relative;
+  top: -87px;
+  left:200px;
+  padding-left: 316px;
+  width: 15px;
+  z-index: -2;
+  
+}
+
+.igual1 {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: lightblue;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+.peso {
+  position: absolute;
+  top: 70;
+  left:320px;
+  width: 30px;
+  height: 2px;
+  z-index: 1;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.resultado {
+  position: relative;
+  top: -148px;
+  padding-left: 66px;
+  text-align: center;
+  font-family: initial;
+}
+
+.azulClaro {
+  color: #b0d9e5;
+}
+
+.azul {
+  color: #0278a9;
+}
+
+.roxo {
+  color: #2d0d56;
+}
+
+.amarelo {
+  color: #ffcc01;
+}
+
+.rosa {
+  color: #e5194a;
+}
