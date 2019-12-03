@@ -34,18 +34,18 @@
       <tbody *ngIf="mostraTabela2==false && mostraTabela==true">
         <tr id="tr" *ngFor="let item of pessoa">
           <td>{{item.nome}}</td>
-          <td>{{item.id}}</td>
-          <td><button id="botaoInformacoes" (click)="exibirInformacoes()">...</button></td>
+          <td id="id">{{item.id}}</td>
+          <td><button id="botaoInformacoes" (click)="botaoSelecionado()">...</button></td>
           <td>
-              <div id="crudLista" *ngIf="exibirInformacoesCrud==true">
-                <ul id="InformacoesUl">
-                  <li><button>Editar paciente</button> </li>
-                  <li><button>Deletar paciente</button></li>
-                  <li><button>dados do paciente</button></li>
-                </ul>
-  
-              </div>
-            </td>
+            <div id="crudLista" class="esconde">
+              <ul id="InformacoesUl">
+                <li><button  id="editar">Editar paciente</button> </li>
+                <li><button id="deletar" (click)="deletarPaciente()">Deletar paciente</button></li>
+                <li><button id="informacoes">dados do paciente</button></li>
+              </ul>
+
+            </div>
+          </td>
         </tr>
       </tbody>
 
@@ -56,7 +56,7 @@
           <td>{{mostraTabelaId}}</td>
           <td><button id="botaoInformacoes" (click)="exibirInformacoes()">...</button></td>
           <td>
-              <div id="crudLista" *ngIf="exibirInformacoesCrud==true">
+              <div id="crudLista" class="esconde">
                 <ul id="InformacoesUl">
                   <li><button  id="editar">Editar paciente</button> </li>
                   <li><button id="deletar" (click)="deletarPaciente()">Deletar paciente</button></li>

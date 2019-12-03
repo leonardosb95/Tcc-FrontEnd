@@ -28,7 +28,6 @@ export class PacientesComponent implements OnInit {
 
   mostraTabela: boolean = false;
   mostraTabela2: boolean = false;
-  exibirInformacoesCrud: boolean = false;
   nome: string;
   dtNasc: string;
   idade: number;
@@ -289,32 +288,63 @@ export class PacientesComponent implements OnInit {
     });
   }
 
+  botaoSelecionado() {
+    var botoes = document.querySelectorAll("#botaoInformacoes");
+    var div = document.querySelectorAll("#crudLista");
 
-  //CRUD
+    for (let index = 0; index < botoes.length; index++) {
+      botoes[index].addEventListener("click", function () {
+        const atributo = div[index].getAttribute('class');
+        console.log(atributo);
+        if (atributo == 'esconde') {
+          div[index].classList.remove('esconde');
+          console.log('adicionou class');
+        } else {
+          div[index].classList.add('esconde');
+          console.log('removeu class');
+        }
+
+      })
+
+
+    }
+
+  }
+
+
+
 
   deletarPaciente() {
-    var li = document.querySelector('#InformacoesUl');
-    li.addEventListener('click', function (event) {
-      let paginaSelecionada;
-      paginaSelecionada = event.target['innerHTML'];//Quando eu  clico ele pega o valor da pagina
-      console.log(paginaSelecionada);
-    });
-
-  }
-
-  exibirInformacoes() {
-    var botaoInformacoes = document.querySelector('#botaoInformacoes');
-    botaoInformacoes.addEventListener('click', function (event) {
-      var botao = event.target['parentElement'];
-      console.log(botao);
-    });
-
-    if (this.exibirInformacoesCrud) {
-      this.exibirInformacoesCrud = false;
-    } else {
-      this.exibirInformacoesCrud = true;
+    var botoes = document.querySelectorAll("#deletar");
+    for (let index = 0; index < botoes.length; index++) {
+      botoes[index].addEventListener("click", function () {
+        let tds = document.querySelectorAll("#id");
+        tds[index].classList.add('Selecionado');
+      });
     }
+    var id = document.querySelector('.Selecionado');
+    console.log(id.innerHTML);
+    var pessoa = new Pessoa();
+    pessoa.id = Number(id.innerHTML);
+    console.log("Id selecionado: " + pessoa.id);
+    this.urlService.sendDeleteRequestPessoa(pessoa.id).subscribe(err => {
+      console.log(err);
+    });
+
+
+    this.ngOnInit();
+
   }
+
+
+
+
+
+
+
+
+
+
 
 
 }//fim NgOnInit 

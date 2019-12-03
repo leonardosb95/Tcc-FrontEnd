@@ -204,6 +204,13 @@ public sendPutRequestPessoa(pessoa: Pessoa) {
   return this.http.put(url, pessoa).pipe(map(res => res.json()));
 }
 
+//---------------------------------------------------------------------------
+  // DELETE
+
+  public sendDeleteRequestPessoa(id:number) {
+    const url = `${this.API}/pessoa/`+id;
+    return this.http.delete(url);
+  }
 
 
 }
